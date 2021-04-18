@@ -3,6 +3,7 @@ package com.decimalab.dagger2
 import android.app.Application
 import com.decimalab.dagger2.data.database.DatabaseService
 import com.decimalab.dagger2.data.netwotk.NetworkService
+import com.decimalab.dagger2.di.AppComponent
 
 /**
  * Created by Shakil Ahmed Shaj on 18,April,2021.
@@ -15,7 +16,6 @@ class MyApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        databaseService = DatabaseService(this, "local_db", 1)
-        networkService = NetworkService(this, "www.shaj.com", "123456")
+        AppComponent().inject(this)
     }
 }
