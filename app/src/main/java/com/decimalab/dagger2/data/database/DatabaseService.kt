@@ -3,20 +3,24 @@ package com.decimalab.dagger2.data.database
 import android.content.Context
 
 
-class DatabaseService(private val context: Context) {
+class DatabaseService(
+    context: Context,
+    databaseName: String,
+    databaseVersion: Int
+) {
 
-    private var databaseName: String =  ""
-    private var databaseVersion: Int = 0
-    private var mContext: Context?  = null
+    private var mDatabaseName: String = ""
+    private var mDatabaseVersion: Int = 0
+    private var mContext: Context? = null
 
     init {
         mContext = context
-        databaseName = "local_db"
-        databaseVersion = 1
+        mDatabaseName = databaseName
+        mDatabaseVersion = databaseVersion
     }
 
-    fun getDatabase(): String{
-        return " $databaseName - $databaseVersion"
+    fun getDatabase(): String {
+        return " $mDatabaseName - $mDatabaseVersion"
     }
 
 

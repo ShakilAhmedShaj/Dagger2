@@ -2,20 +2,24 @@ package com.decimalab.dagger2.data.netwotk
 
 import android.content.Context
 
-class NetworkService(private val context: Context) {
+class NetworkService(
+    context: Context,
+    url: String,
+    apiKey: String
+) {
 
-    private var apiKey: String =  ""
-    private var mUrl: String =  ""
-    private var mContext: Context?  = null
+    private var mApiKey: String = ""
+    private var mUrl: String = ""
+    private var mContext: Context? = null
 
 
     init {
         mContext = context
-        apiKey = "151554545"
-        mUrl = "http://test.com"
+        mApiKey = apiKey
+        mUrl = url
     }
 
-    fun getNetworkService(): String{
-        return " $mUrl - $apiKey"
+    fun getNetworkService(): String {
+        return " $mUrl - $mApiKey"
     }
 }
