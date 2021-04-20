@@ -2,6 +2,7 @@ package com.decimalab.dagger2.data.database
 
 import android.content.Context
 
+
 class DatabaseService(
     context: Context,
     databaseName: String,
