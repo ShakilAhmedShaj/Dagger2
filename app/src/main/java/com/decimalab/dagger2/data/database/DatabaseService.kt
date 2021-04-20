@@ -1,11 +1,14 @@
 package com.decimalab.dagger2.data.database
 
 import android.content.Context
+import com.decimalab.dagger2.di.qualifier.DatabaseName
+import javax.inject.Inject
+import javax.inject.Singleton
 
-
-class DatabaseService(
+@Singleton
+class DatabaseService @Inject constructor(
     context: Context,
-    databaseName: String,
+    @DatabaseName databaseName: String,
     databaseVersion: Int
 ) {
 

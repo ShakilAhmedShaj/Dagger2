@@ -4,8 +4,11 @@ import android.content.Context
 import com.decimalab.dagger2.MyApp
 import com.decimalab.dagger2.data.database.DatabaseService
 import com.decimalab.dagger2.data.netwotk.NetworkService
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class Repository(
+@Singleton
+class Repository @Inject constructor(
     private val databaseService: DatabaseService,
     private val networkService: NetworkService
 ) {

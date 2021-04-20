@@ -7,6 +7,7 @@ import com.decimalab.dagger2.data.repository.Repository
 import com.decimalab.dagger2.ui.MainViewModel
 import dagger.Module
 import dagger.Provides
+import javax.inject.Singleton
 
 /**
  * Created by Shakil Ahmed Shaj on 18,April,2021.
@@ -19,16 +20,13 @@ class ActivityModule(
 
 ) {
 
-    @Provides
-    fun provideMainViewModel(
-        databaseService: DatabaseService,
-        networkService: NetworkService
-    ): MainViewModel =
-        MainViewModel(
-            Repository(
-                databaseService,
-                networkService
-            )
-        )
+//    @Provides
+//    fun provideMainViewModel(
+//        repository: Repository
+//    ): MainViewModel =
+//        MainViewModel(
+//            repository
+//        )
+
 
 }

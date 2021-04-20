@@ -1,11 +1,14 @@
 package com.decimalab.dagger2.data.netwotk
 
 import android.content.Context
+import com.decimalab.dagger2.di.qualifier.ApiKEey
+import com.decimalab.dagger2.di.qualifier.Url
+import javax.inject.Inject
 
-class NetworkService(
+class NetworkService @Inject constructor(
     context: Context,
-    url: String,
-    apiKey: String
+    @Url url: String,
+    @ApiKEey apiKey: String
 ) {
 
     private var mApiKey: String = ""
